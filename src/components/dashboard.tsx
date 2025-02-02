@@ -25,7 +25,7 @@ export default function Dashboard() {
       </header>
 
       <main className="container mx-auto px-4 py-8 space-y-8">
-        <div className="grid grid-cols-4 gap-4 pb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 pb-4">
           <div className="relative group w-full h-[120px] flex-shrink-0">
             <div className="absolute inset-0 bg-gradient-to-br from-amber-900 to-amber-800 rounded-lg" />
             <div className="relative p-4 h-full flex flex-col justify-between overflow-hidden">
@@ -57,7 +57,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="grid grid-cols-5 gap-4 py-6">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 py-6">
           <div className="flex items-center gap-2 text-sm text-gray-400 overflow-hidden">
             <div className="p-2 bg-white/5 rounded-lg">
               <Play className="w-4 h-4" />
@@ -95,7 +95,7 @@ export default function Dashboard() {
           <div className="text-sm text-gray-400 mb-4">
             Songs created using MusicGPT
           </div>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4  gap-4">
             {Array.from({ length: 12 }).map((_, i) => (
               <div
                 key={i}

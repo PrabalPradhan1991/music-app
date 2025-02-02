@@ -19,15 +19,15 @@ import Tooltip from "./tooltip";
 interface MusicPlayerProps {
   title: string;
   artist: string;
-  plays: number;
+  plays: string;
   coverUrl: string;
   audioUrl: string;
   className?: string;
-  handleShow: () => void;
+  handleShow?: () => void;
 }
 
 export function MusicPlayer({
-  //title,
+  title,
   artist,
   plays,
   coverUrl,
@@ -45,12 +45,6 @@ export function MusicPlayer({
   const [clientX, setClientX] = useState(0);
   const [trackHoverPercentage, setTrackHoverPercentage] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
-
-  // const formatTime = (time: number) => {
-  //   const minutes = Math.floor(time / 60);
-  //   const seconds = Math.floor(time % 60);
-  //   return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-  // };
 
   const handlePlayPause = () => {
     if (audioRef.current) {
@@ -70,6 +64,7 @@ export function MusicPlayer({
   };
 
   const handleLoadedMetadata = () => {
+    console.log("metada is loaded");
     // TODO
     // if (audioRef.current) {
     //   setDuration(audioRef.current.duration);
@@ -175,7 +170,7 @@ export function MusicPlayer({
           <div className="flex-1 flex px-3 py-2">
             <div className="flex-1 flex flex-col h-full pr-2 relative">
               <h3 className="font-medium truncate text-sm sm:text-base">
-                R&B with uplifiting vibes about neon streets
+                {title}
               </h3>
               <div
                 className={cn("text-sm flex-1 overflow-hidden ", {
@@ -228,7 +223,9 @@ export function MusicPlayer({
           <button
             className="hidden group-hover:block p-1 absolute bg-black border border-border -top-2.5 -right-2.5 rounded-full"
             onClick={() => {
-              handleShow();
+              if (handleShow) {
+                handleShow();
+              }
               handlePlayPause();
               setIsExpanded(false);
             }}
