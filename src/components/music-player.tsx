@@ -279,7 +279,7 @@ export function MusicPlayer({
                 contentComponent={getThumbnailTooltipPoisition()}
                 triggerComponent={
                   <Slider.Thumb
-                    className="block cursor-pointer w-3 h-3 bg-white rounded-full hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="hidden group-hover:block focus:block  cursor-pointer w-3 h-3 bg-white rounded-full hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-violet-500"
                     onMouseMove={() => {
                       setShouldOpenThumbTooltip(true);
                     }}
