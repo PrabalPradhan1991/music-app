@@ -16,7 +16,7 @@ export default function Home() {
         onClick={handleShow}
         className="mb-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
       >
-        {show ? "Hide" : "Show"} Content
+        {show ? "Hide" : "Show"} Music Player
       </Button>
       <MusicPlayer
         className={`transform transition-all duration-500 ease-out
