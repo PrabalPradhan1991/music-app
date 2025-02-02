@@ -16,7 +16,7 @@ The project is part of technical assessment conducted by lalals.com
 
 ## For local
 
-- This project was built on node version 20
+- This project was built on node v20.5.1
 
 ```bash
 npm install
