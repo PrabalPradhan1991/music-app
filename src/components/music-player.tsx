@@ -62,8 +62,8 @@ export function MusicPlayer({
       if (isPlaying) {
         audioRef.current.pause();
       }
-      setIsPlaying(!isPlaying);
     }
+    setIsPlaying(false);
   };
 
   const handleTimeUpdate = () => {
