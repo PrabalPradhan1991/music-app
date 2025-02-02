@@ -12,6 +12,8 @@ type Props = {
   contentComponent: ReactNode;
   contentClassName?: string;
   contentSide?: "top" | "bottom" | "right" | "left";
+  style?: React.CSSProperties;
+  shouldOpen?: boolean;
 };
 
 const Tooltip = (props: Props) => {
@@ -20,15 +22,17 @@ const Tooltip = (props: Props) => {
     contentComponent,
     contentClassName = "",
     contentSide,
+    style,
+    shouldOpen,
   } = props;
 
   const side = contentSide ? { side: contentSide } : {};
 
   return (
     <TooltipProvider delayDuration={100}>
-      <ShadcnTooltip>
+      <ShadcnTooltip open={shouldOpen}>
         <TooltipTrigger asChild>{triggerComponent}</TooltipTrigger>
-        <TooltipContent className={contentClassName} {...side}>
+        <TooltipContent style={style} className={contentClassName} {...side}>
           {contentComponent}
         </TooltipContent>
       </ShadcnTooltip>

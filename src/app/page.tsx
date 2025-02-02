@@ -10,7 +10,7 @@ export default function Home() {
     setShow(!show);
   };
   return (
-    <div className="text-white flex items-center justify-center">
+    <div className="text-white p-3">
       <Button
         variant="default"
         onClick={handleShow}
