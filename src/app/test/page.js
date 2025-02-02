@@ -1,5 +1,4 @@
 "use client";
-import { MusicPlayer } from "@/components/music-player";
 import { useState } from "react";
 
 const SlideUpDemo = () => {
@@ -16,13 +15,13 @@ const SlideUpDemo = () => {
 
       <div
         className={`
-          transform transition-all duration-500 ease-out
-          ${
-            show
-              ? "translate-y-0 opacity-100"
-              : "translate-y-full opacity-0 pointer-events-none"
-          }
-        `}
+            transform transition-all duration-500 ease-out
+            ${
+              show
+                ? "translate-y-0 opacity-100"
+                : "translate-y-full opacity-0 pointer-events-none"
+            }
+          `}
       >
         <div className="p-6 bg-white shadow-lg rounded-lg">
           <h3 className="text-lg font-semibold mb-2">Animated Content</h3>
