@@ -57,6 +57,15 @@ export function MusicPlayer({
     }
   };
 
+  const handlePause = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   const handleTimeUpdate = () => {
     if (audioRef.current) {
       setCurrentTime(audioRef.current.currentTime);
@@ -226,7 +235,7 @@ export function MusicPlayer({
               if (handleShow) {
                 handleShow();
               }
-              handlePlayPause();
+              handlePause();
               setIsExpanded(false);
             }}
           >
